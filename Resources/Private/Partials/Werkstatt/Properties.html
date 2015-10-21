@@ -1,0 +1,152 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+
+     flux:schemaLocation="http://fluidtypo3.org/schemas/flux-7.0.0.xsd"
+     v:schemaLocation="http://fluidtypo3.org/schemas/vhs-1.8.5.xsd">
+
+<!--TYPO3SEARCH_begin-->
+<h1>{werkstatt.titel}</h1>
+
+<table class="tx-werkstattsuche table table-hover" >
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.titel" />
+		</td>
+		<td>
+		{werkstatt.titel}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.untertitel" />
+		</td>
+		<td>
+		{werkstatt.untertitel}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.strasse" />
+		</td>
+		<td>
+		{werkstatt.strasse}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.plz" />
+		</td>
+		<td>
+		{werkstatt.plz}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.ort" />
+		</td>
+		<td>
+		{werkstatt.ort}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.telefon" />
+		</td>
+		<td>
+		{werkstatt.telefon}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.telefax" />
+		</td>
+		<td>
+		{werkstatt.telefax}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.email" />
+		</td>
+		<td>
+            <a href="mailto:{werkstatt.email}">{werkstatt.email}</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.website" />
+		</td>
+		<td>
+		<a href="http://{werkstatt.website}" target="_blank">{werkstatt.website}</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.kontakt_berufliche_rehabilitation" />
+		</td>
+		<td>
+            <f:format.html>{werkstatt.kontaktBeruflicheRehabilitation}</f:format.html>
+		</td>
+	</tr>
+	<tr>
+		<td>
+            <f:translate key="tx_werkstattsuche_domain_model_werkstatt.kontakt_auftraggeber" />
+		</td>
+		<td>
+            <f:format.html>{werkstatt.kontaktAuftraggeber}</f:format.html>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.foerderbereich" />
+		</td>
+		<td>
+		{werkstatt.foerderbereich}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.a_b_f_b_t" />
+		</td>
+		<td>
+		{werkstatt.aBFBT}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_werkstattsuche_domain_model_werkstatt.werkstattladen" />
+		</td>
+		<td>
+		{werkstatt.werkstattladen}
+		</td>
+	</tr>
+    <tr>
+        <td>
+            Bezirke
+        </td>
+        <td>
+				<table class="table table-hover table-condensed">
+            		<f:for each="{werkstatt.bezirke}" as="bezirk">
+						<tr><td><f:link.action action="werkstaettenImBezirk" arguments="{bezirk : bezirk}">{bezirk.name}</f:link.action></td></tr>
+            		</f:for>
+				</table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Produkte und Dienstleistungen
+        </td>
+        <td>
+				<table class="table table-hover table-condensed">
+            		<f:for each="{werkstatt.produkteDienstleistungen}" as="angebot">
+						<tr><td><f:link.action action="werkstaettenProAngebot" arguments="{produkteDienstleistungen : angebot}">{angebot.name}</f:link.action></td></tr>
+            		</f:for>
+				</table>
+        </td>
+    </tr>
+</table>
+
+<!-- TYPO3SEARCH_end-->
+</div>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+
+     flux:schemaLocation="http://fluidtypo3.org/schemas/flux-7.0.0.xsd"
+     v:schemaLocation="http://fluidtypo3.org/schemas/vhs-1.8.5.xsd">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <f:if condition="{produkteDienstleistungeName}">
+                <f:then>Werkstätten für {produkteDienstleistungeName}</f:then>
+                <f:else>Werkstätten</f:else>
+            </f:if>
+        </div>
+        <div class="panel-body">
+                <table class="table table-hover table-condensed">
+                    <f:for each="{werkstatts}" as="werkstatt">
+                        <tr><td><f:link.action pageUid="{settings.werkstattlistePid}" pluginName="Werkstattliste" controller="Werkstatt" action="show" arguments="{werkstatt : werkstatt}"> {werkstatt.titel}</f:link.action></td></tr>
+                    </f:for>
+                </table>
+        </div>
+    </div>
+
+</div>

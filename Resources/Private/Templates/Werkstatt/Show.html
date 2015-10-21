@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+
+     flux:schemaLocation="http://fluidtypo3.org/schemas/flux-7.0.0.xsd"
+     v:schemaLocation="http://fluidtypo3.org/schemas/vhs-1.8.5.xsd">
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:flashMessages renderMode="div" />
+    <div class="tx-wecmap-map-wrapper ">
+    <f:format.raw>{googlemap}</f:format.raw>
+    </div>
+<f:render partial="Werkstatt/Properties" arguments="{werkstatt:werkstatt}" />
+<f:link.action action="list">zur Werkstatt-Liste</f:link.action><br />
+<!-- <f:link.action action="new">New Werkstatt</f:link.action> -->
+</f:section>
+
+</html>

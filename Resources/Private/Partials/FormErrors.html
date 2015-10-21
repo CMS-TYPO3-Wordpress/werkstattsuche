@@ -1,0 +1,22 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+
+      flux:schemaLocation="http://fluidtypo3.org/schemas/flux-7.0.0.xsd"
+      v:schemaLocation="http://fluidtypo3.org/schemas/vhs-1.8.5.xsd">
+
+<f:form.validationResults for="{object}">
+	<f:if condition="{validationResults.flattenedErrors}">
+		<ul>
+		<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">
+			<li>
+			{propertyPath}: <ul>
+				<f:for each="{errors}" as="error"><li>{error}</li></f:for>
+				</ul>
+			</li>
+		</f:for></ul>
+</f:if>
+</f:form.validationResults>
+
+</div>

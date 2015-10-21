@@ -1,0 +1,19 @@
+
+plugin.tx_werkstattsuche {
+	view {
+		# cat=plugin.tx_werkstattsuche/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:werkstattsuche/Resources/Private/Templates/
+		# cat=plugin.tx_werkstattsuche/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:werkstattsuche/Resources/Private/Partials/
+		# cat=plugin.tx_werkstattsuche/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:werkstattsuche/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_werkstattsuche//a; type=string; label=Default storage PID
+		storagePid =
+	}
+	settings {
+	    # cat=plugin.tx_werkstattsuche//a; type=string; label= PID of main Frontend Plugin Werkstattliste
+	    werkstattlistePid =
+	}
+}

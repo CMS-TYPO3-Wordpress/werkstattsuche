@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+
+      flux:schemaLocation="http://fluidtypo3.org/schemas/flux-7.0.0.xsd"
+      v:schemaLocation="http://fluidtypo3.org/schemas/vhs-1.8.5.xsd">
+
+<f:layout name="Default" />
+
+<f:section name="main">
+    <h1>Berliner Werkstattläden</h1>
+
+    <f:flashMessages renderMode="div" />
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Werkstätten und Werkstattläden</div>
+        <div class="panel-body">
+                <table class="table table-hover table-condensed">
+                    <f:for each="{werkstatts}" as="werkstatt">
+                        <tr>
+                            <td>
+                                <f:link.action pageUid="{settings.werkstattlistePid}" pluginName="Werkstattliste" controller="Werkstatt" action="show" arguments="{werkstatt : werkstatt}"> {werkstatt.titel}</f:link.action>
+                                <br/>
+                                {werkstatt.werkstattladen}
+                            </td>
+                        </tr>
+                    </f:for>
+                </table>
+        </div>
+    </div>
+
+</f:section>
+
+</html>

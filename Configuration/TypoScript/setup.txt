@@ -1,0 +1,62 @@
+
+plugin.tx_werkstattsuche {
+	view {
+		templateRootPath = {$plugin.tx_werkstattsuche.view.templateRootPath}
+		partialRootPath = {$plugin.tx_werkstattsuche.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_werkstattsuche.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_werkstattsuche.persistence.storagePid}
+	}
+	settings {
+	    werkstattlistePid = {$plugin.tx_werkstattsuche.settings.werkstattlistePid}
+	}
+}
+
+plugin.tx_werkstattsuche._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+	.tx-werkstattsuche .tx-wecmap-map-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+    }
+
+	.tx-werkstattsuche .tx-wecmap-map-wrapper .tx-wecmap-map {
+	    position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100% !important;
+        height: 100% !important;
+	}
+)
+
+page.includeJSFooter.file99 = EXT:werkstattsuche/Resources/Public/Js/jquery.rwdImageMaps.min.js
+
+
+page.footerData.9999 = TEXT
+page.footerData.9999.value (
+	<script type="text/javascript">
+	$(window).load(function() {
+		$('img[usemap]').rwdImageMaps();
+	});
+	</script>
+)

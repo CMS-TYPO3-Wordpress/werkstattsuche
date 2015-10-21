@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+
+      flux:schemaLocation="http://fluidtypo3.org/schemas/flux-7.0.0.xsd"
+      v:schemaLocation="http://fluidtypo3.org/schemas/vhs-1.8.5.xsd">
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<div class="centered">
+    <script type="text/javascript">
+        function ReplaceImage(filename,txt){
+            filename = "{f:uri.resource(path:'Berlinkarte/')}" + filename;
+            document.getElementById("imagemapberlin").src = filename;
+        }
+    </script>
+    <img usemap="#berlin" src="{f:uri.resource(path:'Berlinkarte/berlin.png')}" width="605" height="500" id="imagemapberlin" class="img-responsive"/>
+    <map name="berlin">
+        <f:for each="{bezirke}" as="bezirk">
+            <f:if condition="{bezirk.kartenBild}">
+                <area shape="poly" coords="{bezirk.kartenKoordinaten}" onMouseOver="ReplaceImage('{bezirk.kartenBild}')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D={bezirk.uid}&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="{bezirk.name}" />
+            </f:if>
+        </f:for>
+        <!--
+        <area shape="poly" coords="168,184,209,188,204,206,207,218,218,221,224,233,228,248,224,262,223,284,212,286,210,299,199,299,186,295,156,302,137,295,111,296,98,292,98,276,93,268,100,256,110,254,117,243,126,233,129,219,150,216,173,215,180,207,171,199" onMouseOver="ReplaceImage('berlin_charlottenburg.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=9&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Charlottenburg" />
+        <area shape="poly" coords="314,212,320,218,322,217,326,226,337,228,343,239,336,253,344,260,343,262,348,266,351,267,355,270,350,273,347,270,345,272,342,266,325,257,321,257,312,267,296,259,299,269,299,273,286,269,284,273,266,272,256,274,257,264,252,263,252,256,259,245,277,241,286,247,301,247,303,244,299,236,302,226,297,217" onMouseOver="ReplaceImage('berlin_kreuzberg.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=2&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Kreuzberg" />
+        <area shape="poly" coords="368,120,373,126,387,127,405,136,421,152,401,161,386,177,390,200,384,205,376,205,380,235,395,239,392,248,407,277,403,284,408,290,398,290,390,298,384,290,370,288,366,278,359,278,257,271,348,266,345,261,338,254,344,239,338,228,340,224,335,219,327,215,332,214,338,199,338,187,349,189,351,182,361,181,353,168,351,163,353,157,349,152,349,139,352,137,353,132" onMouseOver="ReplaceImage('berlin_lichtenberg.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=3&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Lichtenberg" />
+        <area shape="poly" coords="421,153,424,156,428,152,432,157,435,157,435,171,439,179,437,185,481,196,478,204,472,201,470,213,496,215,498,219,479,236,470,262,474,266,461,283,462,291,458,295,456,291,450,293,438,281,427,282,426,287,414,293,404,284,408,277,402,257,397,256,394,248,397,240,394,235,381,234,380,207,391,201,387,178,401,163" onMouseOver="ReplaceImage('berlin_marzahn.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=4&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Marzahn" />
+        <area shape="poly" coords="197,184,203,174,219,167,227,164,234,167,245,167,250,170,250,174,257,170,262,170,261,162,268,160,276,182,284,206,282,212,296,218,301,226,297,236,302,244,280,240,259,244,252,254,224,245,222,235,226,235,225,230,220,229,218,220,210,220,205,205,219,200,218,193,210,184" onMouseOver="ReplaceImage('berlin_mitte.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=1&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Mitte" />
+        <area shape="poly" coords="287,285,283,281,286,272,300,276,297,263,338,288,344,305,341,312,327,312,330,226,379,359,376,292,348,400,336,365,293,380,281,276,278,370,295,317,298,303,300,315,297,315" onMouseOver="ReplaceImage('berlin_neukoelln.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=6&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Neukoelln" />
+        <area shape="poly" coords="323,45,344,36,334,33,326,25,332,20,347,10,355,15,352,30,371,48,381,50,380,73,368,86,361,104,368,119,352,130,349,137,348,154,160,178,337,184,331,212,326,214,339,224,329,224,323,215,316,210,296,216,285,212,286,207,271,159,236,128,246,127,260,106,260,94,253,78,262,73,278,47,300,65,311,61,309,52,315,47" onMouseOver="ReplaceImage('berlin_pankow.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=12&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Pankow" />
+        <area shape="poly" coords="163,75,162,58,180,57,181,39,180,29,199,32,193,40,200,53,200,71,223,82,250,79,258,100,244,124,232,127,268,157,250,172,224,162,202,172,193,185,154,183,132,165,130,148,124,144,124,125,110,108,114,101,125,75" onMouseOver="ReplaceImage('berlin_reinickendorf.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=11&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Reinickendorf" />
+        <area shape="poly" coords="37,229,49,178,56,183,63,177,65,137,50,141,47,133,61,130,70,119,77,117,114,133,119,132,122,146,128,151,129,165,153,186,166,187,168,199,178,208,147,219,127,217,121,224,119,240,106,254,93,268,97,280,93,306,63,333,40,336,29,323,33,316,31,302,38,288,45,285,81,242,57,226" onMouseOver="ReplaceImage('berlin_spandau.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=10&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Spandau" />
+        <area shape="poly" coords="16,379,11,367,21,358,27,359,41,337,63,334,73,320,88,316,95,306,97,294,104,299,134,296,154,303,184,296,217,305,223,302,233,315,240,317,251,354,246,364,229,374,202,394,187,372,168,388,158,384,149,386,147,364,127,363,105,370,72,389,70,398,80,398,78,402,60,401,57,396,50,394,42,396,29,383,31,377,27,373,23,378,22,373,17,373" onMouseOver="ReplaceImage('berlin_steglitz.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=8&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Steglitz" />
+        <area shape="poly" coords="248,365,250,357,254,355,240,315,236,314,232,308,223,298,216,302,210,298,210,286,224,285,229,248,250,257,254,274,282,275,294,314,276,367,279,377,292,381,301,412,294,426,267,424,267,411,252,410,255,403,229,384,230,375" onMouseOver="ReplaceImage('berlin_tempelhof.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=7&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Tempelhof" />
+        <area shape="poly" coords="396,410,396,392,380,392,383,357,333,324,329,314,343,314,347,304,340,286,314,269,324,260,389,300,415,296,337,284,468,304,488,288,532,319,541,318,537,303,559,326,582,331,559,369,564,394,550,394,522,415,534,429,528,440,518,437,490,481,482,473,484,452,490,443,490,436,487,427,474,421,457,431,444,403,420,412" onMouseOver="ReplaceImage('berlin_treptow.png')" onMouseOut="ReplaceImage('berlin.png')" href="/index.php?id={settings.werkstattlistePid}&tx_werkstattsuche_werkstattliste%5Bbezirk%5D=5&tx_werkstattsuche_werkstattliste%5Baction%5D=werkstaettenImBezirk&tx_werkstattsuche_werkstattliste%5Bcontroller%5D=Werkstatt" alt="Treptow" />
+        -->
+    </map>
+</div>
+    <h1>{werkstattlistenUeberschrift}</h1>
+
+    <f:flashMessages renderMode="div" />
+
+    <f:render partial="Werkstatt/Werkstattliste" arguments="{werkstatts:werkstatts}" />
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Suchformular
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                <div class="row">
+                    <f:form action="werkstattAuswahl" pageUid="{settings.werkstattlistePid}" pluginName="Werkstattliste" controller="Werkstatt">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Produkte und Dienstleistungen</div>
+                                <div class="panel-body">
+                                    <f:for each="{produkteDienstleistungens}" as="angebot">
+                                        <div class="checkbox">
+                                            <label>
+                                                <f:form.checkbox name="angebot[]" value="{angebot.uid}"/>{angebot.name}
+                                            </label>
+                                        </div>
+                                    </f:for>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Bezirke</div>
+                                <div class="panel-body">
+                                    <f:for each="{bezirke}" as="bezirk">
+                                        <div class="checkbox">
+                                            <label>
+                                                <f:form.checkbox name="bezirk[]" value="{bezirk.uid}" />{bezirk.name}
+                                            </label>
+                                        </div>
+                                    </f:for>
+                                </div>
+                            </div>
+                            <f:form.submit value="Absenden" class="btn btn-default"/>
+                        </div>
+                    </f:form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--
+    <h4>Produkte und Dienstleistungen</h4>
+    <ul>
+        <f:for each="{produkteDienstleistungens}" as="angebot">
+            <li><f:link.action pageUid="{settings.werkstattlistePid}" pluginName="Werkstattliste" controller="Werkstatt" action="werkstaettenProAngebot" arguments="{produkteDienstleistungen : angebot}">{angebot.name}</f:link.action></li>
+        </f:for>
+    </ul>
+
+    <h4>Bezirke</h4>
+    <ul>
+        <f:for each="{bezirke}" as="bezirk">
+            <li><f:link.action pageUid="{settings.werkstattlistePid}" pluginName="Werkstattliste" controller="Werkstatt" action="werkstaettenImBezirk" arguments="{bezirk : bezirk}"> {bezirk.name}</f:link.action></li>
+        </f:for>
+    </ul>
+    -->
+
+</f:section>
+
+</html>

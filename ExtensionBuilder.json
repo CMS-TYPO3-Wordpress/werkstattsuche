@@ -1,0 +1,530 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    731,
+                    121
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+                        "foerdergruppen",
+                        "aBFBT",
+                        "werkstattlaeden",
+                        "werkstattkarte"
+                    ]
+                },
+                "name": "Werkstatt",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "18655024382"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "titel",
+                            "propertyType": "String",
+                            "uid": "570369874769"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "untertitel",
+                            "propertyType": "String",
+                            "uid": "87915007802"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "strasse",
+                            "propertyType": "String",
+                            "uid": "983513420805"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "plz",
+                            "propertyType": "String",
+                            "uid": "115033038505"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "ort",
+                            "propertyType": "String",
+                            "uid": "595924259989"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "telefon",
+                            "propertyType": "String",
+                            "uid": "353222010342"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "telefax",
+                            "propertyType": "String",
+                            "uid": "854312312454"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "email",
+                            "propertyType": "String",
+                            "uid": "1141946945721"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "website",
+                            "propertyType": "String",
+                            "uid": "724086426579"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "kontaktBeruflicheRehabilitation",
+                            "propertyType": "RichText",
+                            "uid": "1393335105480"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "kontaktAuftraggeber",
+                            "propertyType": "RichText",
+                            "uid": "494082881412"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "foerderbereich",
+                            "propertyType": "Boolean",
+                            "uid": "724454372705"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "aBFBT",
+                            "propertyType": "Boolean",
+                            "uid": "387365085888"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "werkstattladen",
+                            "propertyType": "String",
+                            "uid": "1230078231366"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "Bezirke von Berlin, in denen es eine Niederlassung der Werkstatt gibt.",
+                            "relationName": "bezirke",
+                            "relationType": "manyToMany",
+                            "relationWire": "[wired]",
+                            "uid": "348926951163"
+                        },
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "Produkt und Dienstleistungs-Angebot der Werkstatt",
+                            "relationName": "produkteDienstleistungen",
+                            "relationType": "manyToMany",
+                            "relationWire": "[wired]",
+                            "uid": "90026112288"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    173,
+                    405
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Bezirk",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Bezirk von Berlin",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1290924794711"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "name",
+                            "propertyType": "String",
+                            "uid": "1284698118910"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "kartenKoordinaten",
+                            "propertyType": "Text",
+                            "uid": "1039171610594"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "kartenBild",
+                            "propertyType": "String",
+                            "uid": "626345786502"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    422,
+                    403
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": [
+                        "category2produktlist",
+                        ""
+                    ]
+                },
+                "name": "ProdukteDienstleistungen",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "466150764446"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "name",
+                            "propertyType": "String",
+                            "uid": "424976507450"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "produktkategorie",
+                            "relationType": "manyToOne",
+                            "relationWire": "[wired]",
+                            "uid": "769527313486"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    416,
+                    603
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "ProduktKategorie",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1234672078093"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "name",
+                            "propertyType": "String",
+                            "uid": "302755616234"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "werkstattsuche fuer die LAG Berlin",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2.0-6.2.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "de",
+            "state": "alpha",
+            "targetVersion": "6.2.0-6.2.99",
+            "version": "0.0.1"
+        },
+        "extensionKey": "werkstattsuche",
+        "name": "werkstattsuche",
+        "originalExtensionKey": "werkstattsuche",
+        "persons": [
+            {
+                "company": "faktura gGmbH",
+                "email": "woehlke@faktura-berlin.de",
+                "name": "Thomas W\u00f6hlke",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Werkstatt => list,show",
+                    "noncacheableActions": "Werkstatt => list,show",
+                    "switchableActions": ""
+                },
+                "key": "werkstattliste",
+                "name": "Werkstatt Liste"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Werkstatt => foerdergruppen, show",
+                    "noncacheableActions": "Werkstatt => foerdergruppen, show",
+                    "switchableActions": ""
+                },
+                "key": "foerdergruppen",
+                "name": "F\u00f6rdergruppen"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Werkstatt => aBFBT, show",
+                    "noncacheableActions": "Werkstatt => aBFBT, show",
+                    "switchableActions": ""
+                },
+                "key": "abfbt",
+                "name": "ABFBT"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Werkstatt => werkstattlaeden, show",
+                    "noncacheableActions": "Werkstatt => werkstattlaeden, show",
+                    "switchableActions": ""
+                },
+                "key": "werkstattlaeden",
+                "name": "Werkstattl\u00e4den"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "Werkstatt => werkstattkarte, show",
+                    "noncacheableActions": "Werkstatt => werkstattkarte, show",
+                    "switchableActions": ""
+                },
+                "key": "werkstattkarte",
+                "name": "Werkstattkarte"
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "ProduktKategorie => list\n",
+                    "noncacheableActions": "ProduktKategorie => list\n\n",
+                    "switchableActions": ""
+                },
+                "key": "produkt2werkstatt",
+                "name": "Werkstattsuche nach Produkten"
+            }
+        ],
+        "vendorName": "Fakturaberlin"
+    },
+    "wires": [
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_0",
+                "uid": "348926951163"
+            },
+            "tgt": {
+                "moduleId": 1,
+                "terminal": "SOURCES",
+                "uid": "1290924794711"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_1",
+                "uid": "90026112288"
+            },
+            "tgt": {
+                "moduleId": 2,
+                "terminal": "SOURCES",
+                "uid": "466150764446"
+            }
+        },
+        {
+            "src": {
+                "moduleId": 2,
+                "terminal": "relationWire_0",
+                "uid": "769527313486"
+            },
+            "tgt": {
+                "moduleId": 3,
+                "terminal": "SOURCES",
+                "uid": "1234672078093"
+            }
+        }
+    ],
+    "log": {
+        "last_modified": "2015-07-13 10:26",
+        "extension_builder_version": "7.1.0",
+        "be_user": " (1)"
+    }
+}

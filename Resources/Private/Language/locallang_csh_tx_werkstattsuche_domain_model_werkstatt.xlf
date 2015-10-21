@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-07-13T10:26:49Z" product-name="werkstattsuche">
+		<header/>
+		<body>
+			<trans-unit id="titel.description">
+				<source>titel</source>
+			</trans-unit>
+			<trans-unit id="untertitel.description">
+				<source>untertitel</source>
+			</trans-unit>
+			<trans-unit id="strasse.description">
+				<source>strasse</source>
+			</trans-unit>
+			<trans-unit id="plz.description">
+				<source>plz</source>
+			</trans-unit>
+			<trans-unit id="ort.description">
+				<source>ort</source>
+			</trans-unit>
+			<trans-unit id="telefon.description">
+				<source>telefon</source>
+			</trans-unit>
+			<trans-unit id="telefax.description">
+				<source>telefax</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="website.description">
+				<source>website</source>
+			</trans-unit>
+			<trans-unit id="kontakt_berufliche_rehabilitation.description">
+				<source>kontaktBeruflicheRehabilitation</source>
+			</trans-unit>
+			<trans-unit id="kontakt_auftraggeber.description">
+				<source>kontaktAuftraggeber</source>
+			</trans-unit>
+			<trans-unit id="foerderbereich.description">
+				<source>foerderbereich</source>
+			</trans-unit>
+			<trans-unit id="a_b_f_b_t.description">
+				<source>aBFBT</source>
+			</trans-unit>
+			<trans-unit id="werkstattladen.description">
+				<source>werkstattladen</source>
+			</trans-unit>
+			<trans-unit id="bezirke.description">
+				<source>Bezirke von Berlin, in denen es eine Niederlassung der Werkstatt gibt.</source>
+			</trans-unit>
+			<trans-unit id="produkte_dienstleistungen.description">
+				<source>Produkt und Dienstleistungs-Angebot der Werkstatt</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

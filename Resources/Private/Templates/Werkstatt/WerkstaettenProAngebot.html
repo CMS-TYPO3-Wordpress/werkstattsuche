@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+
+      flux:schemaLocation="http://fluidtypo3.org/schemas/flux-7.0.0.xsd"
+      v:schemaLocation="http://fluidtypo3.org/schemas/vhs-1.8.5.xsd">
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+    <!-- <h1>Werkstätten für {produkteDienstleistungen.name}</h1> -->
+
+    <f:flashMessages renderMode="div" />
+
+    <f:render partial="Werkstatt/Werkstattliste" arguments="{werkstatts:werkstatts,produkteDienstleistungeName:produkteDienstleistungen.name}" />
+
+
+    <!--
+    <h4>Produkte und Dienstleistungen</h4>
+    <ul>
+        <f:for each="{produkteDienstleistungens}" as="angebot">
+            <li><f:link.action pageUid="{settings.werkstattlistePid}" pluginName="Werkstattliste" controller="Werkstatt" action="werkstaettenProAngebot" arguments="{produkteDienstleistungen : angebot}">{angebot.name}</f:link.action></li>
+        </f:for>
+    </ul>
+
+    <h4>Bezirke</h4>
+    <ul>
+        <f:for each="{bezirke}" as="bezirk">
+            <li><f:link.action pageUid="{settings.werkstattlistePid}" pluginName="Werkstattliste" controller="Werkstatt" action="werkstaettenImBezirk" arguments="{bezirk : bezirk}"> {bezirk.name}</f:link.action></li>
+        </f:for>
+    </ul>
+    -->
+
+</f:section>
+
+</html>

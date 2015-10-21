@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-07-13T10:26:49Z" product-name="werkstattsuche">
+		<header/>
+		<body>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt">
+				<source>Werkstatt</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.titel">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.untertitel">
+				<source>Untertitel</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.strasse">
+				<source>Strasse</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.plz">
+				<source>Plz</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.ort">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.telefon">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.telefax">
+				<source>Telefax</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.website">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.kontakt_berufliche_rehabilitation">
+				<source>Kontakt Berufliche Rehabilitation</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.kontakt_auftraggeber">
+				<source>Kontakt Auftraggeber</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.foerderbereich">
+				<source>Foerderbereich</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.a_b_f_b_t">
+				<source>A B F B T</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.werkstattladen">
+				<source>Werkstattladen</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.bezirke">
+				<source>Bezirke</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_werkstatt.produkte_dienstleistungen">
+				<source>Produkte Dienstleistungen</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_bezirk">
+				<source>Bezirk</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_bezirk.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_bezirk.karten_koordinaten">
+				<source>Karten Koordinaten</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_bezirk.karten_bild">
+				<source>Karten Bild</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_produktedienstleistungen">
+				<source>Produkte Dienstleistungen</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_produktedienstleistungen.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_produktedienstleistungen.produktkategorie">
+				<source>Produktkategorie</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_produktkategorie">
+				<source>Produkt Kategorie</source>
+			</trans-unit>
+			<trans-unit id="tx_werkstattsuche_domain_model_produktkategorie.name">
+				<source>Name</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
