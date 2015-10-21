@@ -127,23 +127,41 @@
             Bezirke
         </td>
         <td>
-				<table class="table table-hover table-condensed">
-            		<f:for each="{werkstatt.bezirke}" as="bezirk">
-						<tr><td><f:link.action action="werkstaettenImBezirk" arguments="{bezirk : bezirk}">{bezirk.name}</f:link.action></td></tr>
-            		</f:for>
-				</table>
+			<f:if condition="{f:count(subject: werkstatt.bezirke)}>1">
+				<f:then>
+					<table class="table table-hover table-condensed">
+						<f:for each="{werkstatt.bezirke}" as="bezirk">
+							<tr><td><f:link.action action="werkstaettenImBezirk" arguments="{bezirk : bezirk}">{bezirk.name}</f:link.action></td></tr>
+						</f:for>
+					</table>
+				</f:then>
+				<f:else>
+					<f:for each="{werkstatt.bezirke}" as="bezirk">
+						<f:link.action action="werkstaettenImBezirk" arguments="{bezirk : bezirk}">{bezirk.name}</f:link.action>
+					</f:for>
+				</f:else>
+			</f:if>
         </td>
     </tr>
     <tr>
         <td>
             Produkte und Dienstleistungen
         </td>
-        <td>
-				<table class="table table-hover table-condensed">
-            		<f:for each="{werkstatt.produkteDienstleistungen}" as="angebot">
-						<tr><td><f:link.action action="werkstaettenProAngebot" arguments="{produkteDienstleistungen : angebot}">{angebot.name}</f:link.action></td></tr>
-            		</f:for>
-				</table>
+		<td>
+			<f:if condition="{f:count(subject: werkstatt.produkteDienstleistungen)}>1">
+				<f:then>
+					<table class="table table-hover table-condensed">
+						<f:for each="{werkstatt.produkteDienstleistungen}" as="angebot">
+							<tr><td><f:link.action action="werkstaettenProAngebot" arguments="{produkteDienstleistungen : angebot}">{angebot.name}</f:link.action></td></tr>
+						</f:for>
+					</table>
+				</f:then>
+				<f:else>
+					<f:for each="{werkstatt.produkteDienstleistungen}" as="angebot">
+						<f:link.action action="werkstaettenProAngebot" arguments="{produkteDienstleistungen : angebot}">{angebot.name}</f:link.action>
+					</f:for>
+				</f:else>
+			</f:if>
         </td>
     </tr>
 </table>
